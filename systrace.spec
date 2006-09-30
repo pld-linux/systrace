@@ -36,5 +36,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%attr(755,root,root) %{_bindir}/dnstracer
-%{_mandir}/man8/dnstracer.8*
+%attr(755,root,root) %{_bindir}/systrace
+%{_mandir}/man1/systrace.1*
