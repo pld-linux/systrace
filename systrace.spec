@@ -19,6 +19,7 @@ alarm, allowing an user to refine the currently configured policy.
 
 %prep
 %setup -q
+sed -i -e 's#/usr/X11R6/bin/xsystrace#%{_bindir}/xsystrace#g' systrace.h
 
 %build
 %configure
