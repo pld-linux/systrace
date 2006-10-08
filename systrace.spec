@@ -1,4 +1,5 @@
 Summary:	Interactive Policy Generation for System Calls
+Summary(pl):	Interaktywne generowanie polityki dla wywo³añ systemowych
 Name:		systrace
 Version:	1.6d
 Release:	1
@@ -16,6 +17,13 @@ Systrace enforces system call policies for applications by
 constraining the application's access to the system. The policy is
 generated interactively. Operations not covered by the policy raise an
 alarm, allowing an user to refine the currently configured policy.
+
+%description -l pl
+systrace wymusza polityki wywo³añ systemowych dla aplikacji poprzez
+ograniczanie dostêpu aplikacji do systemu. Polityka jest generowana
+interaktywnie. Operacje nie pokryte przez politykê podnosz± alarm,
+pozwalaj±c u¿ytkownikowi na zmodyfikowanie aktualnie skonfigurowanej
+polityki.
 
 %prep
 %setup -q
