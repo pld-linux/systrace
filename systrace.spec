@@ -1,5 +1,5 @@
 Summary:	Interactive Policy Generation for System Calls
-Summary(pl.UTF-8):   Interaktywne generowanie polityki dla wywołań systemowych
+Summary(pl.UTF-8):	Interaktywne generowanie polityki dla wywołań systemowych
 Name:		systrace
 Version:	1.6d
 Release:	1
