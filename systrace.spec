@@ -2,7 +2,7 @@ Summary:	Interactive Policy Generation for System Calls
 Summary(pl.UTF-8):	Interaktywne generowanie polityki dla wywołań systemowych
 Name:		systrace
 Version:	1.6d
-Release:	1
+Release:	2
 License:	BSD-like
 Group:		Applications
 Source0:	http://www.citi.umich.edu/u/provos/systrace/%{name}-%{version}.tar.gz
@@ -31,12 +31,13 @@ sed -i -e 's#/usr/X11R6/bin/xsystrace#%{_bindir}/xsystrace#g' systrace.h
 
 %build
 %configure
-%{__make}
+echo -e "all:\ninstall:" > regress/Makefile
+%{__make} -j1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} -j1 install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
