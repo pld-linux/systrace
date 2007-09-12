@@ -7,6 +7,7 @@ License:	BSD-like
 Group:		Applications
 Source0:	http://www.citi.umich.edu/u/provos/systrace/%{name}-%{version}.tar.gz
 # Source0-md5:	91f2287a22e22ae1585c33c1f26b74dd
+Patch0:		%{name}-newsysc.patch
 URL:		http://www.citi.umich.edu/u/provos/systrace/
 BuildRequires:	libevent-devel
 ExclusiveArch:	%{ix86}
@@ -27,6 +28,7 @@ polityki.
 
 %prep
 %setup -q
+%patch0 -p1
 sed -i -e 's#/usr/X11R6/bin/xsystrace#%{_bindir}/xsystrace#g' systrace.h
 
 %build
