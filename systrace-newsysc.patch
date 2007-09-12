@@ -1,0 +1,82 @@
+--- systrace-1.6d/linux_syscalls.c.orig	2006-04-08 04:20:11.000000000 +0200
++++ systrace-1.6d/linux_syscalls.c	2007-09-12 21:07:11.635622207 +0200
+@@ -5,7 +5,7 @@
+ /*
+  * this file emulates openbsd's syscallnames[] array.  linux does not
+  * have such a feature.  automatically generated from
+- * arch/i386/kernel/entry.S
++ * arch/i386/kernel/syscall_table.S
+  */
+ 
+ char *linux_syscallnames[] = {
+@@ -282,7 +282,7 @@
+         "tgkill",        /* 270 */
+         "utimes",
+         "fadvise64_64",
+-        "ni_syscall",    /* sys_vserver */
++        "vserver",    /* sys_vserver */
+         "mbind",
+         "get_mempolicy",
+         "set_mempolicy",
+@@ -298,17 +298,41 @@
+         "add_key",
+         "request_key",
+         "keyctl",
+-	"ni_syscall-31",
+-	"ni_syscall-32",	 /* 290 */
+-	"ni_syscall-33",
+-	"ni_syscall-34",
+-	"ni_syscall-35",
+-	"ni_syscall-36",
+-	"ni_syscall-37",	 /* 295 */
+-	"ni_syscall-38",
+-	"ni_syscall-39",
+-	"ni_syscall-40",
+-	"ni_syscall-41",
++	"ioprio_set",
++	"ioprio_get",		/* 290 */
++	"inotify_init",
++	"inotify_add_watch",
++	"inotify_rm_watch",
++	"migrate_pages",
++	"openat",		/* 295 */
++	"mkdirat",
++	"mknodat",
++	"fchownat",
++	"futimesat",
++	"fstatat64",		/* 300 */
++	"unlinkat",
++	"renameat",
++	"linkat",
++	"symlinkat",
++	"readlinkat",		/* 305 */
++	"fchmodat",
++	"faccessat",
++	"pselect6",
++	"ppoll",
++	"unshare",		/* 310 */
++	"set_robust_list",
++	"get_robust_list",
++	"splice",
++	"sync_file_range",
++	"tee",			/* 315 */
++	"vmsplice",
++	"move_pages",
++	"getcpu",
++	"epoll_pwait",
++	"utimensat",		/* 320 */
++	"signalfd",
++	"timerfd",
++	"eventfd",
+ 	NULL			 /* sentinel */
+ };
+ 
+@@ -332,7 +356,7 @@
+ 	if (number < 0 || number >= nr_syscalls) {
+ 		DFPRINTF((stderr, "%s: pid %d Bad number: %d\n",
+ 			__func__, pidnr, number));
+-		return (NULL);
++		return ("UNKNOWN");
+ 	}
+ 
+ 	return (linux_syscallnames[number]);
