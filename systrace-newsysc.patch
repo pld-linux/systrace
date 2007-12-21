@@ -71,12 +71,3 @@
  	NULL			 /* sentinel */
  };
  
-@@ -332,7 +356,7 @@
- 	if (number < 0 || number >= nr_syscalls) {
- 		DFPRINTF((stderr, "%s: pid %d Bad number: %d\n",
- 			__func__, pidnr, number));
--		return (NULL);
-+		return ("UNKNOWN");
- 	}
- 
- 	return (linux_syscallnames[number]);
