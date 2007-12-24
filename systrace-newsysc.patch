@@ -1,6 +1,6 @@
---- systrace-1.6d/linux_syscalls.c.orig	2006-04-08 04:20:11.000000000 +0200
-+++ systrace-1.6d/linux_syscalls.c	2007-09-12 21:07:11.635622207 +0200
-@@ -5,7 +5,7 @@
+--- systrace-1.6e/linux_syscalls.c.orig	2007-12-19 05:59:30.000000000 +0100
++++ systrace-1.6e/linux_syscalls.c	2007-12-24 12:00:58.351116313 +0100
+@@ -9,7 +9,7 @@
  /*
   * this file emulates openbsd's syscallnames[] array.  linux does not
   * have such a feature.  automatically generated from
@@ -9,7 +9,7 @@
   */
  
  char *linux_syscallnames[] = {
-@@ -282,7 +282,7 @@
+@@ -286,7 +286,7 @@
          "tgkill",        /* 270 */
          "utimes",
          "fadvise64_64",
@@ -18,7 +18,7 @@
          "mbind",
          "get_mempolicy",
          "set_mempolicy",
-@@ -298,17 +298,41 @@
+@@ -302,17 +302,42 @@
          "add_key",
          "request_key",
          "keyctl",
@@ -68,6 +68,7 @@
 +	"signalfd",
 +	"timerfd",
 +	"eventfd",
++	"sys_fallocate",
  	NULL			 /* sentinel */
  };
  
