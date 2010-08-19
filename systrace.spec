@@ -1,16 +1,16 @@
 Summary:	Interactive Policy Generation for System Calls
 Summary(pl.UTF-8):	Interaktywne generowanie polityki dla wywołań systemowych
 Name:		systrace
-Version:	1.6e
-Release:	2
+Version:	1.6g
+Release:	1
 License:	BSD-like
 Group:		Applications
-Source0:	http://www.citi.umich.edu/u/provos/systrace/%{name}-%{version}.tar.gz
-# Source0-md5:	4fd65a51c97612822b658dd8eba79833
+Source0:	http://www.provos.org/uploads/%{name}-%{version}.tar.gz
+# Source0-md5:	c4c0af2127af33e1b53c7aa07a970c5a
 Patch0:		%{name}-newsysc.patch
-URL:		http://www.citi.umich.edu/u/provos/systrace/
+URL:		http://www.provos.org/index.php?/categories/2-Systrace
 BuildRequires:	libevent-devel
-ExclusiveArch:	%{ix86}
+ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
